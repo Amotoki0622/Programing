@@ -26,5 +26,5 @@ public:
 	virtual void Finalize() override;
 	
 	
-	virtual void
+	virtual eSceneType GetNowScene() const override;
 };
