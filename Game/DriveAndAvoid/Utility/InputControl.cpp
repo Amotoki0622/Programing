@@ -14,7 +14,7 @@ void InputControl::Update()
 {
 	//XInputコントローラーの入力値を取得する
 	XINPUT_STATE input_state = {};
-	GetJoypadInputState(DX_INPUT_PAD1, &input_state);
+	GetJoypadXInputState(DX_INPUT_PAD1, &input_state);
 
 
 	//ボタン入力値の更新
@@ -71,11 +71,17 @@ void InputControl::Update()
 //ボタン取得 ： 押してる間
 bool InputControl::GetButton(int button)
 {
-	return CheckButtonRange(button) && (now_button[button] && !old_button[button]);
+	return CheckButtonRange(button) && (now_button[button] && old_button[button]);
 }
 
 
-//ボタン取得 ： 話した瞬間
+//ボタン取得 ： 押した瞬間
+bool InputControl::GetButtonDown(int button)
+{
+	return CheckButtonRange(button) && (now_button[button] && !old_button[button]);
+}
+
+//ボタン取得 ： 離した瞬間
 bool InputControl::GetButtonUp(int button)
 {
 	return CheckButtonRange(button) && (!now_button[button] && old_button[button]);
