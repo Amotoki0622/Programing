@@ -1,5 +1,10 @@
+/**********************************************************
+*車避けゲームを作ってみよう！
+***********************************************************/
+
 #include "DxLib.h"
 #include "Scene/SceneManager.h"
+
 
 //メイン関数(プログラムはここから始まります)
 int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hPrevInstance, _In_
@@ -9,15 +14,16 @@ int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hPrevInstance, _
 	try
 	{
 		//シーンマネージャー機能の生成
-		
+		SceneManager manager;
 
 		//シーンマネージャー機能の初期化処理
-
+		manager.Initialize();
 
 		//シーンマネージャー機能の更新処理
-
+		manager.Update();
 
 		//シーンマネージャー機能の終了時処理
+		manager.Finalize();
 
 	}
 	catch (const char* err_log)
@@ -27,6 +33,7 @@ int WINAPI WinMain(_In_ HINSTANCE hinstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 
 		//エラー終了を通知
+		return -1;
 	}
 
 	//正常終了を通知
