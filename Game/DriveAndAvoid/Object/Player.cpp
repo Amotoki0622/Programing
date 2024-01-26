@@ -36,7 +36,7 @@ void Player::Initialize()
 	//エラーチェック
 	if (image == -1)
 	{
-		throw("Resource/images/carlpol.bmpがありません/n");
+		throw("Resource/images/carlpol.bmpがありません\n");
 	}
 
 }

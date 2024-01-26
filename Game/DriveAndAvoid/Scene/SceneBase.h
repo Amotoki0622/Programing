@@ -32,7 +32,7 @@ public:
 	//•`‰æˆ—
 	virtual void Draw() const {}
 	//I—¹ˆ—
-	virtual void Finalize();
+	virtual void Finalize() {}
 	//Œ»İ‚ÌƒV[ƒ“î•ñ‚ğæ“¾
 	virtual eSceneType GetNowScene() const = 0;
 };
