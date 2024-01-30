@@ -32,15 +32,15 @@ void GameMainScene::Initialize()
 	//エラーチェック
 	if (back_ground == -1)
 	{
-		throw("Resource/images/back.bmpがありません/n");
+		throw("Resource/images/back.bmpがありません\n");
 	}
 	if (result == -1)
 	{
-		throw("Resource/images/barrier.pngがありません/n");
+		throw("Resource/images/barrier.pngがありません\n");
 	}
 	if (barrier_image == -1)
 	{
-		throw("Resource/images/barrie.pngがありません/n");
+		throw("Resource/images/barrie.pngがありません\n");
 	}
 
 
@@ -207,7 +207,7 @@ void GameMainScene::Finalize()
 	//エラーチェック
 	if (result != 0)
 	{
-		throw("Resource/dat/result_data.csvが開けません/n");
+		throw("Resource/dat/result_data.csvが開けません\n");
 	}
 
 

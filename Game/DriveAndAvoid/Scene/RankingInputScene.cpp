@@ -25,7 +25,7 @@ void RankingInputScene::Initialize()
 	//エラーチェック
 	if (background_image == -1)
 	{
-		throw("Resource/images/Ranking.bmpがありません/n");
+		throw("Resource/images/Ranking.bmpがありません\n");
 	}
 
 
@@ -45,7 +45,7 @@ void RankingInputScene::Initialize()
 	//エラーチェック
 	if (result != 0)
 	{
-		throw("Resource/dat/result_dat.csvが読み込めません");
+		throw("Resource/dat/result_dat.csvが読み込めません\n");
 	}
 
 

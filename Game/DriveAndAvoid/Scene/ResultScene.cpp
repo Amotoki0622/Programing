@@ -30,11 +30,11 @@ void ResultScene::Initialize()
 	//エラーチェック
 	if (back_ground == -1)
 	{
-		throw("Resource/images/back.bmpがありません/n");
+		throw("Resource/images/back.bmpがありません\n");
 	}
 	if (result == -1)
 	{
-		throw("Resource/images/car.bmpがありません/n");
+		throw("Resource/images/car.bmpがありません\n");
 	}
 
 
@@ -115,7 +115,7 @@ void ResultScene::ReadResultData()
 	//エラーチェック
 	if (result != 0)
 	{
-		throw("Resource/dat/result_dat.csvが読み込めません/n");
+		throw("Resource/dat/result_dat.csvが読み込めません\n");
 	}
 
 

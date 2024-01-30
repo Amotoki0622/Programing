@@ -30,13 +30,13 @@ void Player::Initialize()
 
 
 	//画像の読込み
-	image = LoadGraph("Resource/images/carlpol.bmp");
+	image = LoadGraph("Resource/images/car1pol.bmp");
 
 
 	//エラーチェック
 	if (image == -1)
 	{
-		throw("Resource/images/carlpol.bmpがありません\n");
+		throw("Resource/images/car1pol.bmpがありません\n");
 	}
 
 }

@@ -31,21 +31,21 @@ void SceneManager::Initialize()
 	//ウィンドウモードで起動
 	if (ChangeWindowMode(TRUE) != DX_CHANGESCREEN_OK)
 	{
-		throw("ウィンドウモードで起動しませんでした/n");
+		throw("ウィンドウモードで起動しませんでした\n");
 	}
 
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
 	{
-		throw("Dxライブラリが初期化できませんでした/n");
+		throw("Dxライブラリが初期化できませんでした\n");
 	}
 
-
+	
 	//描画指定処理
 	if (SetDrawScreen(DX_SCREEN_BACK) == -1)
 	{
-		throw("描画先の指定ができませんでした/n");
+		throw("描画先の指定ができませんでした\n");
 	}
 
 
@@ -57,7 +57,7 @@ void SceneManager::Initialize()
 //シーンマネージャー機能 ： 更新処理
 void SceneManager::Update()
 {
-	//現在時間を取得
+	//フレーム開始時間(マイクロ秒)を取得
 	LONGLONG start_time = GetNowHiPerformanceCount();
 
 
@@ -79,7 +79,7 @@ void SceneManager::Update()
 			InputControl::Update();
 
 
-			//更新処理(戻り値は次のシーン)
+			//更新処理(戻り値は次のシーン情報)
 			eSceneType next = current_scene->Update();
 
 
@@ -135,6 +135,9 @@ void SceneManager::Draw() const
 	ClearDrawScreen();
 
 
+	//シーンの描画
+	current_scene->Draw();
+
 	//裏画面の内容を表画面に反映
 	ScreenFlip();
 }
@@ -150,7 +153,7 @@ void SceneManager::ChangeScene(eSceneType scene_type)
 	//エラーチェック
 	if (new_scene == nullptr)
 	{
-		throw("シーンが生成できませんでした。/n");
+		throw("シーンが生成できませんでした。\n");
 	}
 
 

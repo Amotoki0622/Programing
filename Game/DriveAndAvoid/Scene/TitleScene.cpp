@@ -26,15 +26,15 @@ void TitleScene::Initialize()
 	//エラーチェック
 	if (background_image == -1)
 	{
-		throw("Resource/images/Title.bmpがありません/n");
+		throw("Resource/images/Title.bmpがありません\n");
 	}
-	if (menu_image = -1)
+	if (menu_image == -1)
 	{
-		throw("Resource/images/menu.bmpがありません/n");
+		throw("Resource/images/menu.bmpがありません\n");
 	}
-	if (cursor_image = -1)
+	if (cursor_image == -1)
 	{
-		throw("Resource/images/cone.bmpがありません/n");
+		throw("Resource/images/cone.bmpがありません\n");
 	}
 }
 
@@ -94,11 +94,11 @@ void TitleScene::Draw() const
 	DrawGraph(0, 0, background_image, FALSE);
 
 
-	//画像の描画
+	//メニュー画像の描画
 	DrawGraph(120, 200, menu_image, TRUE);
 
 
-	//画像の描画
+	//カーソル画像の描画
 	DrawRotaGraph(90, 220 + menu_cursor * 40, 0.7, DX_PI / 2.0, cursor_image, TRUE);
 }
 
