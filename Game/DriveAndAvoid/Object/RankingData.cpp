@@ -44,7 +44,7 @@ void RankingData::Initialize()
 	//対象ファイルから読み込む
 	for (int i = 0; i < 5; i++)
 	{
-		fscanf_s(fp, "%6d, %2d, %[^,], \n", &score[i], &rank[i], &name[i], 15);
+		fscanf_s(fp, "%6d, %2d, %[^,], \n", &score[i], &rank[i], name[i], 15);
 	}
 
 
@@ -105,7 +105,7 @@ void RankingData::SortData()
 	//選択法ソートを使用し、降順で入れ替える
 	for (int i = 0; i < 5; i++)
 	{
-		for (int j = i; j < 6; j++)
+		for (int j = i + 1; j < 6; j++)
 		{
 			if (score[i] <= score[j])
 			{
