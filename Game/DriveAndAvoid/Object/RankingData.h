@@ -14,7 +14,7 @@ public:
 	~RankingData();
 
 
-	void Initialize();		// ‰Šú‰»ˆ—
+	void Initialize();		// ‰Šúˆ—
 	void Finalize();		// I—¹ˆ—
 
 

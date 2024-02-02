@@ -161,7 +161,7 @@ void RankingData::SortData()
 		fprintf(fp, "%d,%d,%s,\n", score[i], rank[i], name[i]);
 	}
 
-
+	
 	//ファイルクローズ
 	fclose(fp);
 }
