@@ -146,7 +146,7 @@ void SceneManager::Draw() const
 //シーン切り替え処理
 void SceneManager::ChangeScene(eSceneType scene_type)
 {
-	//シーンを生成する
+	//シーンを生成する(SceneBaseが継承されているか？)
 	SceneBase* new_scene = dynamic_cast<SceneBase*>(CreateScene(scene_type));
 
 

@@ -39,7 +39,7 @@ void RankingInputScene::Initialize()
 
 
 	//ファイルオープン
-	errno_t result = fopen_s(&fp, "Resorce/dat/result_data.csv", "r");
+	errno_t result = fopen_s(&fp, "Resource/dat/result_data.csv", "r");
 
 
 	//エラーチェック
@@ -50,7 +50,7 @@ void RankingInputScene::Initialize()
 
 
 	//結果を読み込む
-	fscanf_s(fp, "%6d,/n", &score);
+	fscanf_s(fp, "%6d,\n", &score);
 
 
 	//ファイルクローズ
@@ -154,6 +154,7 @@ eSceneType RankingInputScene::GetNowScene() const
 //名前入力処理
 bool RankingInputScene::InputName()
 {
+	//カーソル操作処理
 	if (InputControl::GetButtonDown(XINPUT_BUTTON_DPAD_LEFT))
 	{
 		if (cursor_x > 0)
@@ -220,7 +221,7 @@ bool RankingInputScene::InputName()
 			{
 				if (cursor_x == 0)
 				{
-					name[name_num++] = '/0';
+					name[name_num] = '\0';
 					return true;
 				}
 				else

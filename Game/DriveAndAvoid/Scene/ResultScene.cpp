@@ -1,4 +1,5 @@
 #include "ResultScene.h"
+#include "../Object/RankingData.h"
 #include "../Utility/InputControl.h"
 #include "DxLib.h"
 
@@ -57,7 +58,7 @@ eSceneType ResultScene::Update()
 }
 
 
-//更新処理
+//描画処理
 void ResultScene::Draw() const
 {
 	//背景画像を描画
@@ -81,7 +82,7 @@ void ResultScene::Draw() const
 		DrawFormatString(260, 222 + (i * 21), GetColor(255, 255, 255), "%6dx%4d=%6d", enemy_count[i], (i + 1) * 50, (i + 1) * 50 * enemy_count[i]);
 	}
 	DrawString(180, 290, "スコア", GetColor(0, 0, 0));
-	DrawFormatString(180, 290, 0xFFFFFF, "		=%6d", score);
+	DrawFormatString(400, 290, 0xFFFFFF, "=%6d", score);
 }
 
 
@@ -109,24 +110,24 @@ void ResultScene::ReadResultData()
 {
 	//ファイルオープン
 	FILE* fp = nullptr;
-	errno_t result = fopen_s(&fp, "Resource/dat/result_dat.csv", "r");
+	errno_t result = fopen_s(&fp, "Resource/dat/result_data.csv", "r");
 
 
 	//エラーチェック
 	if (result != 0)
 	{
-		throw("Resource/dat/result_dat.csvが読み込めません\n");
+		throw("Resource/dat/result_data.csvが読み込めません\n");
 	}
 
 
 	//結果を読み込む
-	fscanf_s(fp, "%6d,/n", &score);
+	fscanf_s(fp, "%6d,\n", &score);
 
 
 	//避けた数と点数を取得
 	for (int i = 0; i < 3; i++)
 	{
-		fscanf_s(fp, "%6d/n", &enemy_count[i]);
+		fscanf_s(fp, "%6d\n", &enemy_count[i]);
 	}
 
 

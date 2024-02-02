@@ -12,7 +12,7 @@ private:
 	int high_score;				//ハイスコア
 	int back_ground;			//背景画像
 	int barrier_image;			//バリア画像
-	int mileage;			//走行距離
+	int mileage;				//走行距離
 	int enemy_image[3];			//敵画像
 	int enemy_count[3];			//通り過ぎた敵カウント
 	Player* player;				//プレイヤー
@@ -27,7 +27,7 @@ public:
 	virtual void Initialize()override;
 	virtual eSceneType Update() override;
 	virtual void Draw() const override;
-	virtual void Finalize();
+	virtual void Finalize() override;
 
 
 	virtual eSceneType GetNowScene() const override;

@@ -37,14 +37,14 @@ void RankingData::Initialize()
 	//エラーチェック
 	if (result != 0)
 	{
-		throw("Resource/dat/ranking_data.csvが開けませんでした。\n");
+		throw("Resource/dat/ranking_data.csvが開けませんでした\n");
 	}
 
 
 	//対象ファイルから読み込む
 	for (int i = 0; i < 5; i++)
 	{
-		fscanf_s(fp, "%6d, %2d, %[^,], /n", &score[i], &rank[i], &name[i], 15);
+		fscanf_s(fp, "%6d, %2d, %[^,], \n", &score[i], &rank[i], &name[i], 15);
 	}
 
 
