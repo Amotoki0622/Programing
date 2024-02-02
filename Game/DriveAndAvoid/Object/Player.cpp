@@ -24,7 +24,7 @@ void Player::Initialize()
 	box_size = Vector2D(31.0f, 60.0f);
 	angle = 0.0f;
 	speed = 3.0f;
-	hp = 1;
+	hp = 1000;
 	fuel = 20000;
 	barrier_count = 3;
 
