@@ -157,7 +157,7 @@ void GameMainScene::Draw() const
 	for (int i = 0; i < 3; i++)
 	{
 		DrawRotaGraph(523 + (i * 50), 120, 0.3, 0, enemy_image[i], TRUE, FALSE);
-		DrawFormatString(510 + (i * 50), 140, GetColor(255, 255, 255), "%03d", enemy_image[i]);
+		DrawFormatString(510 + (i * 50), 140, GetColor(255, 255, 255), "%03d", enemy_count[i]);
 	}
 	DrawFormatString(510, 200, GetColor(0, 0, 0), "‘–s‹——£");
 	DrawFormatString(555, 220, GetColor(255, 255, 255), "%08d", mileage / 10);
