@@ -27,6 +27,7 @@ Barrier::~Barrier()
 // •`‰æˆ—
 void Barrier::Draw(const Vector2D& location)
 {
+	GraphFilter(image, DX_GRAPH_FILTER_HSB, 0, 5, 8, 0);
 	DrawRotaGraphF(location.x, location.y, 1.0, 0.0, image, TRUE);
 }
 
